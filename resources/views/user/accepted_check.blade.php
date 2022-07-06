@@ -1,0 +1,1 @@
+accepted_check page
