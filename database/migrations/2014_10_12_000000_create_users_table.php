@@ -11,12 +11,12 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 45);
-            $table->string('email', 45)->unique();
             $table->string('phone_number', 11);
             $table->string('address', 255)->nullable();
-            $table->string('password');
             $table->tinyInteger('is_active');
+            $table->string('email', 45)->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->rememberToken(); 
             $table->timestamps();
         });

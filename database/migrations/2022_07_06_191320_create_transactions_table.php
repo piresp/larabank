@@ -12,7 +12,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->decimal('amount', 8, 2);
             $table->string('description', 255);
-            $table->enum('type', ['debit', 'credit']);
             $table->unsignedBigInteger('account_id')->index();
             $table->unsignedBigInteger('check_id')->nullable()->index();
             $table->timestamps();

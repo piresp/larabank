@@ -11,6 +11,11 @@ class BalanceController extends Controller
         return view('user.balance');
     }
 
+    public function transaction()
+    {
+        return view('user.transaction');
+    }
+
     public function incomes()
     {
         return view('user.incomes');
