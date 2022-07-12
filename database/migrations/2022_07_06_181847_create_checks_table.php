@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('checks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('file');
-            $table->string('description', 255);
             $table->decimal('amount', 8, 2);
             $table->enum('status', ['pending', 'approved', 'rejected'])->index();
             $table->unsignedBigInteger('account_id')->index();
