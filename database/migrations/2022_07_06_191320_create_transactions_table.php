@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('amount', 8, 2);
             $table->string('description', 255);
             $table->timestamps();
 
