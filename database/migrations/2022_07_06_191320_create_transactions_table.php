@@ -12,12 +12,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->decimal('amount', 8, 2);
             $table->string('description', 255);
-            $table->unsignedBigInteger('account_id')->index();
-            $table->unsignedBigInteger('check_id')->nullable()->index();
             $table->timestamps();
 
-            $table->foreign('account_id')->references('id')->on('accounts');
-            $table->foreign('check_id')->references('id')->on('checks');
+            $table->foreignId('account_id')->index()->constrained();
+            $table->foreignId('check_id')->nullable()->index()->constrained();
         });
     }
 

@@ -13,10 +13,10 @@ return new class extends Migration
             $table->string('file');
             $table->decimal('amount', 8, 2);
             $table->enum('status', ['pending', 'approved', 'rejected'])->index();
-            $table->unsignedBigInteger('account_id')->index();
             $table->timestamps();
 
-            $table->foreign('account_id')->references('id')->on('accounts');
+            $table->foreignId('account_id')->index()->constrained();
+
         });
     }
 

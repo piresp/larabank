@@ -12,10 +12,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->decimal('balance', 15, 2)->default(0);
             $table->tinyInteger('status');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained();
         });
     }
 
