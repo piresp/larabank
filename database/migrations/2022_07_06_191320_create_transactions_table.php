@@ -14,7 +14,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreignId('account_id')->index()->constrained();
-            $table->foreignId('check_id')->nullable()->index()->constrained();
         });
     }
 
