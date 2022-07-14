@@ -13,6 +13,11 @@ class Transaction extends Model
         'amount',
         'description',
         'account_id',
-        'check_id',
-];
+        'check_id'
+    ];
+
+    public function account()
+    {
+        return $this->hasOne(Account::class);
+    }
 }
