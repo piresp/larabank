@@ -12,11 +12,16 @@ class Transaction extends Model
     protected $fillable = [
         'amount',
         'description',
+        'number',
         'account_id',
-        'check_id'
     ];
 
     public function account()
+    {
+        return $this->belongsTo(Account::class);
+    }
+
+    public function number()
     {
         return $this->hasOne(Account::class);
     }
