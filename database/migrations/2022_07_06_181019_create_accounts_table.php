@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->decimal('balance', 15, 2)->default(0);
+            $table->string('number')->unique();
             $table->tinyInteger('status');
             $table->timestamps();
 
